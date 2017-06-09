@@ -12,6 +12,7 @@ const CarList = require('./models/carlists')
 const coCities = ['boulder', 'cosprings', 'denver', 'eastco', 'fortcollins', 'rockies', 'pueblo', 'westslope']
 const carModels = ['toyota', 'nissan', 'ford', 'audi', 'ferrari', 'bmw', 'volkswagen', 'hyundai', 'mitsubishi', 'honda', 'buick', 'chevrolet', 'jeep', 'dodge']
 
+mongoose.Promise = global.Promise
 
 function getCar(url, cb){
   carReq(url, (err, html)=>{
@@ -24,8 +25,8 @@ function carDb(url, city, cb){
   carReq(url, (err, html) => {
     if(html !== undefined){
       let hrefs = getLinks(html, city)
-      async.mapLimit(hrefs, 3, getCar, (err, results) => {
-        CarList.create(results, err => {
+      async.mapLimit(hrefs, 10, getCar, (err, results) => {
+        CarList.insertMany(results, {ordered:false}, err => {
           if(err) console.log(err)
           console.log('your car list is being saved in the data base')
           cb(results)
@@ -36,9 +37,9 @@ function carDb(url, city, cb){
 }
 
 const scrape = new cron.CronJob({
-  cronTime:'00 53 19 * * *',
+  cronTime:'00 32 11 * * *',
   onTick: () => {
-    mongoose.connect('mongodb://Alvaro:password@ds117592.mlab.com:17592/car_app', err=>{
+    mongoose.connect('mongodb://localhost/car_finder_app_dev', err=>{
       if(err){
         return console.log(err)
       }

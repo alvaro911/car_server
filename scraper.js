@@ -16,7 +16,6 @@ function getLinks(html, city){
 //create that invokes getlinks and then async to map through and start my object asynchronously
 
 function carBuilderInfo(html){
-  // console.log('Getting HTML ',html)
   let page={}
   let $ = cheerio.load(html)
   let title=$('#titletextonly')
@@ -29,12 +28,11 @@ function carBuilderInfo(html){
   let city=$('.postingtitletext small')
   let cityText=city.text()
   let img=$('.swipe-wrap img')
-  page.carId=postingInfoText
+  page._id=postingInfoText
   page.city=cityText
   page.title=titleText
   page.price=priceText
   page.img=img['0'] && img['0'].attribs.src
-  // console.log(page)
   return page
 }
 

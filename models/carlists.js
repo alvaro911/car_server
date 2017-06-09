@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const carFinderSchema = new Schema({
-  carId: String,
-  city: String,
-  title: String,
-  price: String,
-  img: String
+  _id: {type:String},
+  city: {type:String, default:'NaN'},
+  title: {type:String},
+  price: {type:Number, default:0},
+  img: {type:String},
 })
 
 module.exports = mongoose.model('CarList', carFinderSchema)
