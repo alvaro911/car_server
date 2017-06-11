@@ -4,7 +4,9 @@
   "description": "",
   "main": "config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development nodemon cron-job.js",
+    "start": "NODE_ENV=production nodemon cron-job.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +16,8 @@
     "cron": "^1.2.1",
     "mongoose": "^4.10.5",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
