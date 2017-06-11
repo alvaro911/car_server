@@ -4,9 +4,8 @@
   "description": "",
   "main": "config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development nodemon cron-job.js",
-    "start": "NODE_ENV=production nodemon cron-job.js"
+    "dev": "NODE_ENV=development nodemon index.js",
+    "start": "NODE_ENV=production nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +13,7 @@
     "async": "^2.4.1",
     "cheerio": "^1.0.0-rc.1",
     "cron": "^1.2.1",
+    "express": "^4.15.3",
     "mongoose": "^4.10.5",
     "request": "^2.81.0"
   },
