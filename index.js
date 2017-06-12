@@ -57,7 +57,7 @@ function cronCar() {
 }
 
 const scrape = new cron.CronJob({
-  cronTime: '00 00 11 * * *',
+  cronTime: '00 00 01 * * *',
   onTick: cronCar
   // start: true,
   // runOnInit: true
