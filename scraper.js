@@ -28,11 +28,13 @@ function carBuilderInfo(html){
   let city=$('.postingtitletext small')
   let cityText=city.text()
   let img=$('.swipe-wrap img')
+  const model = $('.attrgroup span:nth-child(1)').text().split(' ')
   page._id=postingInfoText
   page.city=cityText
   page.title=titleText
   page.price=priceText
   page.img=img['0'] && img['0'].attribs.src
+  page.model=model[1]
   return page
 }
 
