@@ -7,7 +7,8 @@ mongoose.Promise = global.Promise;
 mongoose.set('debug', true);
 
 try {
-  mongoose.connect(CONFIG.DB_URL);
+  console.log(CONFIG.DB_URL)
+  mongoose.connect('mongodb://localhost/car_finder_app_dev');
 } catch (err) {
   mongoose.createConnection(CONFIG.DB_URL);
 }

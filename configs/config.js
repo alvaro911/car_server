@@ -1,4 +1,4 @@
-const DB_URL_PROD = 'mongodb://Alvaro:password@ds117592.mlab.com:17592/car_app'
+const DB_URL_PROD = 'mongodb://alvaro:password@ds125262.mlab.com:25262/co_used_cars'
 const DB_URL_DEV = 'mongodb://localhost/car_finder_app_dev'
 
 function getEnv(env){
