@@ -30,10 +30,10 @@ function carDb(url, city, cb) {
           throw err;
         }
         const arr = results.filter(item => {
-          item !== undefined
+          return item !== undefined
         })
         CarList.insertMany(arr, { ordered: false }, err => {
-          if (err) console.log(err);
+          if (err) console.log(err)
           console.log('your car list is being saved in the data base')
           cb(results);
         });
@@ -57,9 +57,9 @@ function cronCar() {
 }
 
 const scrape = new cron.CronJob({
-  cronTime: '00 32 15 * * *',
-  onTick: cronCar,
-  start: true,
-  runOnInit: true
+  cronTime: '00 00 01 * * *',
+  onTick: cronCar
+  // start: true,
+  // runOnInit: true
 });
 scrape.start();
