@@ -8,7 +8,7 @@ mongoose.set('debug', true);
 
 try {
   console.log(CONFIG.DB_URL)
-  mongoose.connect('mongodb://localhost/car_finder_app_dev');
+  mongoose.connect(CONFIG.DB_URL);
 } catch (err) {
   mongoose.createConnection(CONFIG.DB_URL);
 }
