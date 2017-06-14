@@ -25,7 +25,7 @@ function removeQr(str) {
 function carBuilderInfo(html){
   const page = {}
   const $ = cheerio.load(html)
-  const title = $('#titconstextonly')
+  const title = $('#titletextonly')
   const postingInfo = $('.postinginfos .postinginfo:nth-child(1)')
   const tempText = postingInfo.text()
   const postingInfoText = tempText.split('').splice(9 ,(tempText.length)-9).join('')
