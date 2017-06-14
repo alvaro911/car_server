@@ -13,7 +13,7 @@ function getLinks(html, city){
 }
 
 function reg(str) {
-  return str.replace(/[()]/g, '').trim();
+  return str.replace(/[()]/gi, '').trim();
 }
 
 function removeQr(str) {
@@ -32,7 +32,7 @@ function carBuilderInfo(html){
   const titleText = title.text()
   const price = $('.price')
   const priceText = price.text()
-  const city = $('.postingtitconstext small')
+  const city = $('.postingtitletext small')
   const cityText = city.text()
   const img = $('.swipe-wrap img')
   const model = $('.attrgroup span:nth-child(1)').text().split(' ')
