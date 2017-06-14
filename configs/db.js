@@ -7,7 +7,6 @@ mongoose.Promise = global.Promise;
 mongoose.set('debug', true);
 
 try {
-  console.log(CONFIG.DB_URL)
   mongoose.connect(CONFIG.DB_URL);
 } catch (err) {
   mongoose.createConnection(CONFIG.DB_URL);
