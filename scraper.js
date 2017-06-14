@@ -13,11 +13,11 @@ function getLinks(html, city){
 }
 
 function reg(str) {
-  return str.replace(/[()]/gi, '').trim();
+  return str.replace(/[()]/gi, '').toLowerCase().trim();
 }
 
 function removeQr(str) {
-  return str.replace(/QR Code Link to This Post/gi, '').trim();
+  return str.replace(/QR Code Link to This Post/gi, '').toLowerCase().trim();
 }
 
 //create that invokes getlinks and then async to map through and start my object asynchronously
